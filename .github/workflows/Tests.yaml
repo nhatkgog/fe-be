@@ -1,0 +1,45 @@
+name: .NET CI
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+  workflow_dispatch:
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    env:
+      ASPNETCORE_ENVIRONMENT: "Testing"
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Setup .NET 8 SDK
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '8.0.x'
+
+    - name: Restore dependencies
+      run: |
+        cd ./be
+        dotnet restore
+
+    - name: Build solution
+      run: |
+        cd ./be
+        dotnet build --no-restore --configuration Release
+
+    - name: Run tests
+      run: |
+        cd ./be
+        dotnet test --no-build --configuration Release --logger "console;verbosity=detailed" > test_results.txt
+    
+    - name: Upload test results
+      uses: actions/upload-artifact@v4
+      with:
+        name: test-results
+        path: ./be/*.txt

@@ -1,0 +1,83 @@
+.container {
+    max-width: 650px; /* Slightly wider container for better spacing */
+    margin: 2rem auto;
+    padding: 2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern, readable font */
+    background-color: #ffffff;
+    border-radius: 12px; /* Softer, more modern rounded corners */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08); /* A more subtle and effective shadow */
+}
+
+.backButton {
+    display: inline-flex; /* Use flexbox for easy alignment */
+    align-items: center;
+    gap: 0.5rem; /* Space between text and a potential icon */
+    margin-bottom: 2rem;
+    padding: 0.6rem 1.2rem;
+    background-color: #f0f4f8; /* Softer blue-gray */
+    color: #4a5568; /* Darker, more readable text color */
+    border: none; /* No border for a cleaner look */
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.backButton:hover {
+    background-color: #e2e8f0; /* Darker shade on hover */
+    transform: translateY(-2px); /* Slight lift on hover for a subtle effect */
+}
+
+.title {
+    margin: 0 0 1.5rem;
+    text-align: center;
+    font-size: 2.2rem; /* Larger, more prominent title */
+    color: #1a202c; /* Very dark gray for high contrast */
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.detailTable {
+    width: 100%;
+    border-collapse: separate; /* Use 'separate' for styling rows and cells individually */
+    border-spacing: 0;
+    overflow: hidden; /* Ensures rounded corners on the table */
+    border-radius: 8px;
+}
+
+.detailTable th,
+.detailTable td {
+    padding: 1rem 1.5rem;
+    text-align: left;
+    vertical-align: middle; /* Align content vertically */
+}
+
+.detailTable th {
+    background-color: #e2e8f0; /* Soft blue-gray for headers */
+    color: #4a5568;
+    width: 35%;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.detailTable td {
+    background-color: #f7fafc; /* Very light blue-gray for data cells */
+    border-bottom: 1px solid #edf2f7; /* Lighter border line */
+    color: #2d3748; /* Dark, high-contrast text */
+}
+
+.detailTable tr:last-child td {
+    border-bottom: none; /* Remove bottom border on the last row */
+}
+
+.detailTable tr:nth-child(even) td {
+    background-color: #ffffff; /* Alternate white background for stripes */
+}
+
+.detailTable tr:hover td {
+    background-color: #ebf8ff; /* Light blue on hover for great visual feedback */
+}
