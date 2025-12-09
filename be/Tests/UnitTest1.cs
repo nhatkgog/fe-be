@@ -84,16 +84,16 @@ namespace Tests
                 _output.WriteLine($"Id: {book.LaptopId}, Name: {book.Name}, Brand: {book.Brand}");
         }
 
-        //[Fact]
-        //public async Task GetById_ReturnsBook()
-        //{
-        //    var response = await _client.GetAsync("/api/laptops/1");
-        //    response.EnsureSuccessStatusCode();
+        [Fact]
+        public async Task GetById_ReturnsBook()
+        {
+            var response = await _client.GetAsync("/api/laptops/4");
+            response.EnsureSuccessStatusCode();
 
-        //    var book = await response.Content.ReadFromJsonAsync<Laptop>();
-        //    Assert.NotNull(book);
-        //    Assert.Equal(1, book.LaptopId);
-        //}
+            var book = await response.Content.ReadFromJsonAsync<Laptop>();
+            Assert.NotNull(book);
+            Assert.Equal(1, book.LaptopId);
+        }
 
         //[Fact]
         //public async Task Post_AddsBook()
